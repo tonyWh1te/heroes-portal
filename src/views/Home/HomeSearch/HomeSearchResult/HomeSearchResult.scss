@@ -1,0 +1,20 @@
+@use '../../../../styles/vars';
+
+.char-search {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__success,
+  &__error {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  &__success {
+    color: #03710e;
+  }
+  &__error {
+    color: vars.$red;
+  }
+}

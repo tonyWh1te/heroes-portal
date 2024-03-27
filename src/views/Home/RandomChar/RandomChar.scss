@@ -1,0 +1,82 @@
+@use '../../../styles/vars';
+
+.random-char {
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @extend %block;
+    @include vars.media('max', 'md') {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  &__block {
+    display: flex;
+    column-gap: 30px;
+    padding: 35px 35px 35px 40px;
+    @include vars.media('max', 'sm') {
+      flex-direction: column;
+      align-items: center;
+      padding: 25px;
+    }
+  }
+  &__img {
+    width: 180px;
+    height: 180px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding-top: 3px;
+    @include vars.media('max', 'sm') {
+      align-items: center;
+    }
+  }
+  &__name {
+    @extend %title;
+    @include vars.media('max', 'sm') {
+      text-align: center;
+    }
+  }
+  &__description {
+    flex: 1 0 auto;
+  }
+  &__btns {
+    display: flex;
+    a:nth-child(1) {
+      margin-right: 30px;
+    }
+  }
+  &__choice {
+    background-color: vars.$dark;
+    padding: 35px 40px;
+    position: relative;
+  }
+  &__title {
+    display: block;
+    color: #fff;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.045em;
+    &:nth-child(1) {
+      margin-bottom: 40px;
+    }
+    &:nth-child(2) {
+      margin-bottom: 12px;
+    }
+    @include vars.media('max', 'md') {
+      font-size: 20px;
+      &:nth-child(1) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  &__decor {
+    position: absolute;
+    bottom: 14px;
+    right: -34px;
+    @include vars.media('max', 'lg') {
+      display: none;
+    }
+  }
+}
